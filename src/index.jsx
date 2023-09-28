@@ -24,18 +24,16 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Router>
-        <Container>
-          <Routes>
-            <Route path="/" element={<MainView />} />
-            <Route path="/login" element={<LoginView />} />
-            <Route path="/signup" element={<SignupView />} />
-            <Route path="/profile" element={<ProfileView />} />
-            <Route path="/movies" element={<MovieCard />} />
-            <Route path="/movieinfo" element={<MovieView />} />
-          </Routes>
-        </Container>
-      </Router>
+      <Container>
+        <Routes>
+          <Route path="/" element={<MainView />} />
+          <Route path="/login" element={<LoginView />} />
+          <Route path="/signup" element={<SignupView />} />
+          <Route path="/profile" element={<ProfileView />} />
+          <Route path="/movies" element={<MovieCard />} />
+          <Route path="/movieinfo" element={<MovieView />} />
+        </Routes>
+      </Container>
     </BrowserRouter>
   );
 };

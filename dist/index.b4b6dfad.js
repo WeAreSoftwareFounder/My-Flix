@@ -2964,65 +2964,59 @@ const App = ()=>{
     _s();
     const [isAuthenticated, setIsAuthenticated] = (0, _react.useState)(false);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.BrowserRouter), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.BrowserRouter), {
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _containerDefault.default), {
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/",
-                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainview.MainView), {}, void 0, false, void 0, void 0)
-                        }, void 0, false, {
-                            fileName: "src/index.jsx",
-                            lineNumber: 30,
-                            columnNumber: 13
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/login",
-                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginview.LoginView), {}, void 0, false, void 0, void 0)
-                        }, void 0, false, {
-                            fileName: "src/index.jsx",
-                            lineNumber: 31,
-                            columnNumber: 13
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/signup",
-                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupview.SignupView), {}, void 0, false, void 0, void 0)
-                        }, void 0, false, {
-                            fileName: "src/index.jsx",
-                            lineNumber: 32,
-                            columnNumber: 13
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/profile",
-                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profile.ProfileView), {}, void 0, false, void 0, void 0)
-                        }, void 0, false, {
-                            fileName: "src/index.jsx",
-                            lineNumber: 33,
-                            columnNumber: 13
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/movies",
-                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _moviecard.MovieCard), {}, void 0, false, void 0, void 0)
-                        }, void 0, false, {
-                            fileName: "src/index.jsx",
-                            lineNumber: 34,
-                            columnNumber: 13
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/movieinfo",
-                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {}, void 0, false, void 0, void 0)
-                        }, void 0, false, {
-                            fileName: "src/index.jsx",
-                            lineNumber: 35,
-                            columnNumber: 13
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/index.jsx",
-                    lineNumber: 29,
-                    columnNumber: 11
-                }, undefined)
-            }, void 0, false, {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _containerDefault.default), {
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                        path: "/",
+                        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainview.MainView), {}, void 0, false, void 0, void 0)
+                    }, void 0, false, {
+                        fileName: "src/index.jsx",
+                        lineNumber: 29,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                        path: "/login",
+                        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginview.LoginView), {}, void 0, false, void 0, void 0)
+                    }, void 0, false, {
+                        fileName: "src/index.jsx",
+                        lineNumber: 30,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                        path: "/signup",
+                        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupview.SignupView), {}, void 0, false, void 0, void 0)
+                    }, void 0, false, {
+                        fileName: "src/index.jsx",
+                        lineNumber: 31,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                        path: "/profile",
+                        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profile.ProfileView), {}, void 0, false, void 0, void 0)
+                    }, void 0, false, {
+                        fileName: "src/index.jsx",
+                        lineNumber: 32,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                        path: "/movies",
+                        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _moviecard.MovieCard), {}, void 0, false, void 0, void 0)
+                    }, void 0, false, {
+                        fileName: "src/index.jsx",
+                        lineNumber: 33,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                        path: "/movieinfo",
+                        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {}, void 0, false, void 0, void 0)
+                    }, void 0, false, {
+                        fileName: "src/index.jsx",
+                        lineNumber: 34,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
                 fileName: "src/index.jsx",
                 lineNumber: 28,
                 columnNumber: 9
@@ -3042,7 +3036,7 @@ _s(App, "BT2f1XiqCgFHwobQTWR7kond0Ig=");
 _c = App;
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
     fileName: "src/index.jsx",
-    lineNumber: 43,
+    lineNumber: 41,
     columnNumber: 13
 }, undefined));
 var _c;
@@ -34238,24 +34232,32 @@ const MainView = ()=>{
                                 lineNumber: 92,
                                 columnNumber: 17
                             }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                                path: "/movies" // Make sure this path corresponds to your intended route
-                                ,
-                                element: movies.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    children: "The list is empty!"
-                                }, void 0, false, void 0, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                                    children: movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                            md: 3,
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _moviecard.MovieCard), {
-                                                movie: movie,
-                                                onMovieClick: handleMovieClick
-                                            }, void 0, false, void 0, void 0)
-                                        }, movie._id, false, void 0, void 0))
-                                }, void 0, false, void 0, void 0)
+                            movies.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                children: "The list is empty!"
                             }, void 0, false, {
                                 fileName: "src/components/Mainview/Mainview.jsx",
-                                lineNumber: 94,
-                                columnNumber: 17
+                                lineNumber: 95,
+                                columnNumber: 19
+                            }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+                                children: movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                                        md: 3,
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _moviecard.MovieCard), {
+                                            movie: movie,
+                                            onMovieClick: handleMovieClick
+                                        }, void 0, false, {
+                                            fileName: "src/components/Mainview/Mainview.jsx",
+                                            lineNumber: 100,
+                                            columnNumber: 25
+                                        }, undefined)
+                                    }, movie._id, false, {
+                                        fileName: "src/components/Mainview/Mainview.jsx",
+                                        lineNumber: 99,
+                                        columnNumber: 23
+                                    }, undefined))
+                            }, void 0, false, {
+                                fileName: "src/components/Mainview/Mainview.jsx",
+                                lineNumber: 97,
+                                columnNumber: 19
                             }, undefined)
                         ]
                     }, void 0, true)

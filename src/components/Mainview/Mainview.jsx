@@ -90,26 +90,21 @@ export const MainView = () => {
             ) : (
               <>
                 <Button onClick={handleLogout}>Logout</Button>
-                {/* Use the Route component to define routes */}
-                <Route
-                  path="/movies" // Make sure this path corresponds to your intended route
-                  element={
-                    movies.length === 0 ? (
-                      <div>The list is empty!</div>
-                    ) : (
-                      <Row>
-                        {movies.map((movie) => (
-                          <Col key={movie._id} md={3}>
-                            <MovieCard
-                              movie={movie}
-                              onMovieClick={handleMovieClick}
-                            />
-                          </Col>
-                        ))}
-                      </Row>
-                    )
-                  }
-                />
+                {/* Render your movies list directly */}
+                {movies.length === 0 ? (
+                  <div>The list is empty!</div>
+                ) : (
+                  <Row>
+                    {movies.map((movie) => (
+                      <Col key={movie._id} md={3}>
+                        <MovieCard
+                          movie={movie}
+                          onMovieClick={handleMovieClick}
+                        />
+                      </Col>
+                    ))}
+                  </Row>
+                )}
               </>
             )}
           </>
