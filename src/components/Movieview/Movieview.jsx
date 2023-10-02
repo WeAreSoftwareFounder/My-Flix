@@ -10,6 +10,11 @@ import {
 } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
+const handleBackClick = () => {
+  setSelectedMovie(null);
+};
+
+
 export const MovieView = ({ movie, onBackClick }) => {
   return (
     <Container className="d-flex justify-content-center align-items-center vh-100">
@@ -47,11 +52,11 @@ MovieView.propTypes = {
     Title: PropTypes.string,
     ImagePath: PropTypes.string,
     Director: PropTypes.shape({
-      Name: PropTypes.string,
+      Name: PropTypes.string  || PropTypes.array,
     }),
     Description: PropTypes.string,
     Genre: PropTypes.shape({
-      Name: PropTypes.string,
+      Name: PropTypes.string || PropTypes.array,
     }),
   }),
   onBackClick: PropTypes.func,

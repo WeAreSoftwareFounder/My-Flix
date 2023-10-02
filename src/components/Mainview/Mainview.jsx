@@ -1,18 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import React, {useState, useEffect} from 'react';
+import {Col} from 'react-bootstrap';
 import {
   Route,
   BrowserRouter,
   Routes,
-  Navigate,
 } from 'react-router-dom';
-import { LoginView } from '../Loginview/Loginview';
-import { SignupView } from '../Signupview/Signupview';
-import { ProfileView } from '../Profileview/Profile';
-import { MovieView } from '../Movieview/Movieview';
-import { NavigationBar } from '../Navigation/Navigationbar,';
-import { MovieCard } from '../Moviecard/Moviecard';
-import { HomeView } from '../HomeView/Homeview';
+import {LoginView} from '../Loginview/Loginview';
+import {SignupView} from '../Signupview/Signupview';
+import {ProfileView} from '../Profileview/Profile';
+import {MovieView} from '../Movieview/Movieview';
+import {NavigationBar} from '../Navigation/Navigationbar,';
+import {MovieCard} from '../Moviecard/Moviecard';
+import {HomeView} from '../HomeView/Homeview';
 
 export const MainView = () => {
   const [user, setUser] = useState(null);
@@ -23,31 +22,32 @@ export const MainView = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    const handleLogin = (user, token) => {
-      setUser(user);
-      setToken(token);
-      setIsAuthenticated(true);
-      // Fetch movies when the user is authenticated
+    // Check if the user is authenticated before fetching movies
+    if (isAuthenticated) {
       fetch('https://my-flixs-8361837988f4.herokuapp.com/movies', {
-        headers: { Authorization: `Bearer ${token}` },
+        headers: {Authorization: `Bearer ${token}`},
       })
-        .then((response) => response.json())
-        .then((moviesData) => {
-          setMovies(moviesData);
-        })
-        .catch((error) => {
-          console.error('Fetch error:', error);
-        });
-    };
-  }, [token, user]);
-
-  const handleMovieClick = (movie) => {
-    setSelectedMovie(movie);
-  };
-
-  const handleBackClick = () => {
-    setSelectedMovie(null);
-  };
+          .then((response) => {
+            if (response.status === 401) {
+            // Handle the Unauthorized (401) error here
+            // You can display an error message or take any other appropriate action
+              throw new Error('Unauthorized');
+            }
+            return response.json();
+          })
+          .then((moviesData) => {
+            setMovies(moviesData);
+          })
+          .catch((error) => {
+            if (error.message === 'Unauthorized') {
+            // Handle the Unauthorized error here (e.g., show an error message)
+              console.error('Unauthorized error:', error);
+            } else {
+              console.error('Fetch error:', error);
+            }
+          });
+    }
+  }, [token, user, isAuthenticated]);
 
   const handleLogin = (user, token) => {
     setUser(user);
@@ -58,17 +58,11 @@ export const MainView = () => {
   const handleLogout = () => {
     setUser(null);
     setToken(null);
-    isAuthenticateds(false);
-    setMovies([]);
+    isAuthenticated(false);
+    setMovies(null);
   };
 
-  const handleShowSignUp = () => {
-    setShowSignUp(true);
-  };
 
-  const handleSignUpSuccess = () => {
-    setShowSignUp(false);
-  };
 
   return (
     <BrowserRouter>
@@ -86,22 +80,20 @@ export const MainView = () => {
           <Route
             path="/movies"
             element={
-              isAuthenticated ? (
-                <div>
-                  {movies.length === 0 ? (
-                    <Col>The list is empty!</Col>
-                  ) : (
-                    movies.map((movie) => (
-                      <Col className="mb-4" key={movie._id} md={3}>
-                        <MovieCard movie={movie} />
-                      </Col>
-                    ))
-                  )}
-                </div>
-              ) : (
-                // Redirect or display a message for non-authenticated users
-                <Navigate to="/login" replace />
-              )
+              <div>
+                {movies.length === 0 ? (
+                  <Col>The list is empty!</Col>
+                ) : (
+                  movies.map((movie) => (
+                    <Col className="mb-4" key={movie._id} md={3}>
+                      <MovieCard
+                        movie={movie}
+                        handleMovieClick={selectedMovie}
+                      />
+                    </Col>
+                  ))
+                )}
+              </div>
             }
           />
           <Route path="/movieinfo/:movieId" element={<MovieView />} />

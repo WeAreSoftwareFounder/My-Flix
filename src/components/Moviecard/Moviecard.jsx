@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import { Button, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
+const handleMovieClick = (movie) => {
+  setSelectedMovie(movie);
+};
+
 export const MovieCard = ({ movie, onMovieClick }) => {
   // Check if movie is defined and has the expected properties
   if (
@@ -43,4 +47,6 @@ MovieCard.propTypes = {
     ImagePath: PropTypes.string,
   }),
   onMovieClick: PropTypes.func,
+  handleAddToFavorites: PropTypes.func.isRequired,  // NEW  PROP  TYPE  REQUIRED  FOR  ADD  TO  FAVORITES
+  handleMovieClick: PropTypes.func.isRequired,  // NEW  PROP  TYPE  REQUIRED  FOR  MOVIE  CLICK
 };
